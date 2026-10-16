@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 
 export class Balken{
-  width = 10;
+  width = 5;
   height;
 
   setHeight(height: number) {

@@ -10,4 +10,11 @@ export class Sorting {
       }
     }
   }
+
+  bubbleSortStep(arr: Balken[], j: number) {
+    if (arr[j].getHight() > arr[j + 1].getHight()) {
+      [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+    }
+  }
+
 }
