@@ -22,13 +22,6 @@ main {
   background: #242424;
 }
 
-.titlebar {
-  padding: 4px 10px;
-  background: #3a3a3a;
-  border-bottom: 1px solid #6a6a6a;
-  color: #e8e8e8;
-}
-
 .body {
   padding: 12px;
 }
@@ -57,10 +50,26 @@ main {
   color: #33cc33;
 }
 
-.actions {
+.actions-top {
   display: flex;
+  margin-bottom: 12px;
   gap: 8px;
+}
+
+.actions-bottom {
+  display: flex;
   margin-top: 12px;
+  gap: 8px;
+}
+
+.bar-text {
+  padding: 4px 10px;
+  font: inherit;
+  color: #e8e8e8;
+  background: #3a3a3a;
+  border: 1px solid #6a6a6a;
+  border-radius: 0;
+  cursor: pointer;
 }
 
 button {
@@ -84,4 +93,64 @@ button:active:not(:disabled) {
 button:disabled {
   color: #777;
   cursor: not-allowed;
+}
+
+.switch-wrap {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 10px;
+  background: #3a3a3a;
+  border: 1px solid #6a6a6a;
+  color: #e8e8e8;
+}
+
+.switch-label {
+  color: #e8e8e8;
+}
+
+.switch {
+  position: relative;
+  width: 44px;
+  height: 22px;
+  padding: 0;
+  background: #1a1a1a;
+  border: 1px solid #6a6a6a;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background: #c8c8c8;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.switch.on {
+  background: #1f4d1f;
+  border-color: #33cc33;
+}
+
+.switch.on .thumb {
+  transform: translateX(22px);
+  background: #33cc33;
+}
+
+.switch:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.switch:hover:not(:disabled) {
+  background: #1a1a1a;
+}
+
+.switch.on:hover:not(:disabled) {
+  background: #1f4d1f;
 }

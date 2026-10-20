@@ -1,8 +1,26 @@
 <main>
   <section class="window">
-    <div class="titlebar">sortier-visualisierung: bubblesort</div>
+
 
     <div class="body">
+      <div class="actions-top">
+        <p class="bar-text">[ sorting visualizer ] </p>
+        <label class="switch-wrap">
+          <span class="switch-label">[ Step ]</span>
+          <button
+            type="button"
+            role="switch"
+            class="switch"
+            [class.on]="isStepping()"
+            [attr.aria-checked]="isStepping()"
+            (click)="toggleStepping()"
+            [disabled]="sorting_running()"
+          >
+            <span class="thumb"></span>
+          </button>
+        </label>
+      </div>
+
       <div class="container">
         @for (b of bars(); track b; let i = $index) {
           <div
@@ -16,9 +34,11 @@
         }
       </div>
 
-      <div class="actions">
-        <button (click)="create_bars()">[ Balken erzeugen ]</button>
-        <button (click)="sortStep()" [disabled]="bars().length === 0">[ Sortieren ]</button>
+      <div class="actions-bottom">
+        <button (click)="create_bars()" [disabled]="sorting_running()">[ Balken erzeugen ]</button>
+        <button (click)="bubbleSortStep()" [disabled]="bars().length === 0 || sorting_running()">[ BubbleSort ]</button>
+        <button (click)="quickSortStep()" [disabled]="bars().length === 0 || sorting_running()">[ Quicksort ]</button>
+        <p class="bar-text">[ Steps: {{ steps() }} ]</p>
       </div>
     </div>
   </section>

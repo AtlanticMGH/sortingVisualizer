@@ -1,6 +1,6 @@
 import { Balken } from './balken';
 
-export class Sorting {
+export class bubbleSort {
   bubbleSort(arr: Balken[]) {
     for (let i = 0; i < arr.length; i++) {
       for (let j = 0; j < arr.length - i - 1; j++) {
@@ -16,5 +16,4 @@ export class Sorting {
       [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
     }
   }
-
 }

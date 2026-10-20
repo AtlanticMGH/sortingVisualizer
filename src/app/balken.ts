@@ -4,6 +4,8 @@ export class Balken{
   width = 5;
   height;
 
+  //Farbe anhand der Größe
+
   setHeight(height: number) {
     this.height.set(height);
   }
